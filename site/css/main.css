@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: 250 250 248;
+    --color-fg: 24 24 27;
+    --color-muted: 113 113 122;
+    --color-accent: 82 82 91;
+    --color-border: 228 228 231;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: 20 20 22;
+      --color-fg: 237 237 237;
+      --color-muted: 148 148 155;
+      --color-accent: 200 200 205;
+      --color-border: 45 45 50;
+    }
+  }
+
+  html {
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  body {
+    font-family: "Geist", system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .prose-custom p {
+    @apply text-fg/90 leading-relaxed;
+  }
+  .prose-custom a {
+    @apply underline decoration-border underline-offset-2 hover:decoration-fg transition-colors;
+  }
+}
