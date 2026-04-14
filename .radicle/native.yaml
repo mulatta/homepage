@@ -1,0 +1,14 @@
+shell: |
+  set -euo pipefail
+  nix build .#homepage \
+    --print-build-logs \
+    --no-accept-flake-config \
+    --option allow-import-from-derivation false
+  ts=$(date +%s)
+  out="/var/lib/radicle-ci/homepage/release-$ts"
+  mkdir -p "$out"
+  rsync -a result/ "$out/"
+  ln -sfn "release-$ts" /var/lib/radicle-ci/homepage/current.new
+  mv -Tf /var/lib/radicle-ci/homepage/current.new /var/lib/radicle-ci/homepage/current
+  ls -1dt /var/lib/radicle-ci/homepage/release-* | tail -n +6 | xargs -r rm -rf
+  echo "deployed $(git rev-parse HEAD) -> release-$ts"
