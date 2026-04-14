@@ -1,0 +1,19 @@
+{
+  "names": {
+    "_": "562c307c7e0d56d818e50c7c6b9a5dd6aa353ccbe087f7ee68c61c12674098aa",
+    "mulatta": "562c307c7e0d56d818e50c7c6b9a5dd6aa353ccbe087f7ee68c61c12674098aa",
+    "bot": "ca314bf0e20cb067b83b868bd3a27c44faae5ed409d9de5cbc5428889ace1de7"
+  },
+  "relays": {
+    "562c307c7e0d56d818e50c7c6b9a5dd6aa353ccbe087f7ee68c61c12674098aa": [
+      "wss://nostr.mulatta.io",
+      "wss://relay.damus.io",
+      "wss://relay.primal.net"
+    ],
+    "ca314bf0e20cb067b83b868bd3a27c44faae5ed409d9de5cbc5428889ace1de7": [
+      "wss://nostr.mulatta.io",
+      "wss://relay.damus.io",
+      "wss://relay.primal.net"
+    ]
+  }
+}
