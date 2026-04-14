@@ -1,0 +1,14 @@
+base_url = "https://mulatta.io"
+title = "mulatta.io"
+description = "Personal site of mulatta"
+default_language = "en"
+compile_sass = false
+build_search_index = false
+generate_feeds = false
+
+taxonomies = []
+
+[extra]
+github = "https://github.com/mulatta"
+blog = "https://blog.mulatta.io"
+rad = "rad:z3EM9Hr4NCQ6oi8NanciTbURWv89S"
