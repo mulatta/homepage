@@ -16,3 +16,7 @@ serve:
     TW=$!
     trap "kill $TW" EXIT
     zola serve
+
+# Remove local dev artifacts.
+clean:
+    rm -rf site/static/css site/static/fonts site/public result result-*
