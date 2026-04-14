@@ -1,0 +1,5 @@
+{% macro icon(name, class="w-4 h-4") %}
+  <span class="inline-flex {{ class }}" aria-hidden="true">
+    {{ load_data(path="static/icons/" ~ name ~ ".svg") | safe }}
+  </span>
+{% endmacro icon %}
