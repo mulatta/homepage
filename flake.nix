@@ -3,6 +3,8 @@
 
   inputs = {
     # keep-sorted start
+    cv.inputs.nixpkgs.follows = "nixpkgs";
+    cv.url = "github:mulatta/cv";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
