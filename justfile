@@ -12,6 +12,8 @@ serve:
         ln -sfn "$pkg/share/fonts/opentype/$f.otf" "site/static/fonts/$f.otf"
     done
     cd site
+    # One-shot first so zola never races the initial compile on page load.
+    tailwindcss -i css/main.css -o static/css/main.css
     tailwindcss -i css/main.css -o static/css/main.css --watch &
     TW=$!
     trap "kill $TW" EXIT
