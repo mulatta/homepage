@@ -1,50 +1,215 @@
 {% extends "base.html" %}
 {% import "macros/icon.html" as icons %}
-
 {% block content %}
-<section class="space-y-12">
-  <div class="space-y-4">
-    <h1 class="text-3xl font-medium tracking-tight">Seungwon Lee</h1>
+  <section class="space-y-3 mb-12">
+    <h1 class="text-4xl font-medium tracking-tight">Seungwon Lee</h1>
     <p class="text-muted leading-relaxed max-w-xl">
-      Graduate student in bioengineering. Building tools that bridge the bench and computational biology.
+      M.S. candidate in bioengineering. Building tools that bridge the bench and computational biology.
     </p>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Now</h2>
-    <p class="text-muted leading-relaxed max-w-xl">
-      Engineering inducible RNA regulators by RNA Capture-SELEX at <a href="https://sjanglab.org" target="_blank" rel="noopener noreferrer" class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">SBEE Lab</a>,
-      and applying PLM-based active learning (EvolvePro) to optimize
-      transcription-factor variants. Maintaining bioinformatics
-      packages in nixpkgs on the side.
-    </p>
-  </div>
-
-  <div class="space-y-3">
-    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Links</h2>
+    <p class="font-mono text-xs text-muted">Incheon, KR</p>
+  </section>
+  <section class="mb-16">
     <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm">
       <li>
         <a href="{{ config.extra.blog | safe }}"
-           target="_blank" rel="noopener noreferrer"
+           target="_blank"
+           rel="noopener noreferrer"
            class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
           Blog{{ icons::icon(name="external-link", class="w-3 h-3") }}
         </a>
       </li>
       <li>
         <a href="https://rad.mulatta.io/nodes/rad.mulatta.io"
-           target="_blank" rel="noopener noreferrer"
+           target="_blank"
+           rel="noopener noreferrer"
            class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
           <span class="font-mono">rad</span>{{ icons::icon(name="external-link", class="w-3 h-3") }}
         </a>
       </li>
       <li>
         <a href="{{ config.extra.github | safe }}"
-           target="_blank" rel="noopener noreferrer"
+           target="_blank"
+           rel="noopener noreferrer"
            class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
           GitHub{{ icons::icon(name="external-link", class="w-3 h-3") }}
         </a>
       </li>
+      <li>
+        <a href="/cv.pdf"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-1.5 hover:text-accent transition-colors">
+          CV{{ icons::icon(name="external-link", class="w-3 h-3") }}
+        </a>
+      </li>
     </ul>
-  </div>
-</section>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="mb-16 max-w-2xl">
+    <p class="leading-relaxed text-fg/90">
+      I work between two modes — <strong class="font-medium">synthetic biology</strong>
+      (genome editing tool development, ncRNA-based gene regulation) and
+      <strong class="font-medium">computational biology</strong> (AI-driven protein and RNA
+      engineering, biomolecular structure prediction, NGS analysis pipelines). Neither
+      alone is enough, so I spend time on the bridge.
+    </p>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="mb-16 space-y-3 max-w-2xl">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Now</h2>
+    <p class="leading-relaxed text-fg/90">
+      Running Capture-SELEX rounds against buspirone and pioglitazone at
+      <a href="https://sjanglab.org"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">SBEE Lab</a>
+      (Incheon National University, advised by Sungho Jang, Ph.D.). Applying
+      PLM-based active learning (EvolvePro) to direct the evolution of BenM
+      and TphR transcription factors, and maintaining bioinformatics
+      packages in nixpkgs on the side.
+    </p>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="mb-16 space-y-4 max-w-2xl">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Ongoing</h2>
+    <ul class="space-y-2 text-sm">
+      <li class="flex gap-4">
+        <span class="font-mono text-muted w-28 shrink-0">2022 → now</span>
+        <span>Researcher at SBEE Lab, Incheon National University.</span>
+      </li>
+      <li class="flex gap-4">
+        <span class="font-mono text-muted w-28 shrink-0">2025 → now</span>
+        <span>nixpkgs maintainer for bioinformatics packages (Nextflow, BLAST, ViennaRNA).</span>
+      </li>
+    </ul>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="mb-16">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-muted mb-10">Timeline</h2>
+    <div class="space-y-10">
+      <div class="grid grid-cols-[4rem_1fr] gap-8">
+        <div class="font-mono text-sm text-muted pt-0.5">2026</div>
+        <ul class="space-y-2 leading-relaxed text-fg/90">
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Open-source contributions: <a href="https://github.com/pytorch/pytorch"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">PyTorch</a>
+              (CPUBLAS fix), packaging for <a href="https://github.com/numtide/llm-agents.nix"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">numtide/llm-agents.nix</a>
+              and <a href="https://github.com/juspay/services-flake"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">juspay/services-flake</a>.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-[4rem_1fr] gap-8">
+        <div class="font-mono text-sm text-muted pt-0.5">2025</div>
+        <ul class="space-y-2 leading-relaxed text-fg/90">
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Became a <a href="https://github.com/NixOS/nixpkgs"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">nixpkgs</a>
+              maintainer for bioinformatics packages (Nextflow, BLAST, ViennaRNA).</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Started the EvolvePro directed evolution project on BenM and TphR transcription factors.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Guest lecture at Incheon Science High School: AI in modern biology (AlphaFold3, AI-driven protein engineering).</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Completed B.S. in Bioengineering with a Computer Science minor at Incheon National University.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-[4rem_1fr] gap-8">
+        <div class="font-mono text-sm text-muted pt-0.5">2024</div>
+        <ul class="space-y-2 leading-relaxed text-fg/90">
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Started M.S. at SBEE Lab, Incheon National University.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Organizer &amp; chair, 63rd National Undergraduate Symposium on Biology at Seoul National University.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="grid grid-cols-[4rem_1fr] gap-8">
+        <div class="font-mono text-sm text-muted pt-0.5">2023</div>
+        <ul class="space-y-2 leading-relaxed text-fg/90">
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Joined SBEE Lab as an undergraduate research intern.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>Led the BINU (Bioinformatics INU) study group — linear algebra and ML fundamentals.</span>
+          </li>
+          <li class="flex gap-3">
+            <span class="text-muted shrink-0">—</span><span>TA for the 2023 Korea Youth Bio-academy; team leader at the 62nd National Undergraduate Symposium on Biology.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="mb-16 space-y-4 max-w-2xl">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Infrastructure</h2>
+    <ul class="space-y-3 leading-relaxed text-fg/90">
+      <li class="flex gap-3">
+        <span class="text-muted shrink-0">—</span>
+        <span>
+          <a href="https://github.com/mulatta/dots"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="font-mono text-sm underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">mulatta/dots</a>
+          — personal NixOS + flake-parts setup. Clan-managed fleet of self-hosted services (mail, files, vault, radicle seed, notifications) across three nodes.
+        </span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-muted shrink-0">—</span>
+        <span>
+          <a href="https://github.com/SBEE-Lab/infra"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="font-mono text-sm underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">SBEE-Lab/infra</a>
+          — maintain the lab's NixOS infrastructure (shared build and GPU nodes, lab services).
+        </span>
+      </li>
+    </ul>
+  </section>
+  <hr class="border-border mb-16">
+  <section class="space-y-4 max-w-2xl">
+    <h2 class="text-xs font-mono uppercase tracking-widest text-muted">Contact</h2>
+    <ul class="space-y-2 text-sm leading-relaxed">
+      <li class="flex gap-4">
+        <span class="text-muted font-mono w-16 shrink-0">email</span><a href="mailto:seungwon@mulatta.io"
+   class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">seungwon@mulatta.io</a>
+      </li>
+      <li class="flex gap-4">
+        <span class="text-muted font-mono w-16 shrink-0">nostr</span><a href="/.well-known/nostr.json"
+   class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors"><code class="font-mono text-xs bg-border/40 px-1 rounded">@mulatta.io</code></a>
+      </li>
+      <li class="flex gap-4">
+        <span class="text-muted font-mono w-16 shrink-0">radicle</span><a href="https://rad.mulatta.io/nodes/rad.mulatta.io"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">rad.mulatta.io</a>
+      </li>
+      <li class="flex gap-4">
+        <span class="text-muted font-mono w-16 shrink-0">github</span><a href="https://github.com/mulatta"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">@mulatta</a>
+      </li>
+      <li class="flex gap-4">
+        <span class="text-muted font-mono w-16 shrink-0">cv</span><a href="/cv.pdf"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="underline decoration-border underline-offset-2 hover:decoration-fg transition-colors">PDF</a>
+      </li>
+    </ul>
+  </section>
 {% endblock %}
