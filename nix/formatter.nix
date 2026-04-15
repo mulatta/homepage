@@ -1,8 +1,21 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 {
   imports = [ inputs.treefmt-nix.flakeModule ];
   perSystem.treefmt = {
     projectRootFile = "flake.nix";
+    settings.global.excludes = [
+      "flake.lock"
+      "*.svg"
+      "*.otf"
+      "*.ttf"
+      "*.pdf"
+    ];
+    # Treat Tera templates as Jinja2 for djlint; the flag isn't exposed by
+    # treefmt-nix's djlint module, so append it via settings override.
+    settings.formatter.djlint.options = lib.mkAfter [
+      "--profile"
+      "jinja"
+    ];
     programs = {
       nixfmt.enable = true;
       deadnix.enable = true;
@@ -17,6 +30,22 @@
           ps.mdformat-frontmatter
           ps.mdformat-footnote
         ];
+      };
+      biome = {
+        enable = true;
+        # Biome's CSS parser rejects Tailwind at-rules (@tailwind, @apply,
+        # @layer). Scope biome to json and js so the tailwind-specific CSS
+        # stays untouched.
+        includes = [
+          "*.json"
+          "*.jsonc"
+          "*.js"
+          "*.ts"
+        ];
+      };
+      djlint = {
+        enable = true;
+        indent = 2;
       };
     };
   };

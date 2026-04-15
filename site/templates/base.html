@@ -3,18 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block title %}{{ config.title }}{% endblock %}</title>
+    <title>
+      {% block title %}{{ config.title }}{% endblock %}
+    </title>
     <meta name="description" content="{{ config.description }}" />
     <link rel="stylesheet" href="{{ get_url(path='css/main.css') | safe }}" />
   </head>
   <body class="min-h-full bg-bg text-fg font-sans antialiased">
     <div class="mx-auto max-w-3xl px-6 py-12">
       <header class="flex items-baseline justify-between mb-16">
-        <a href="{{ get_url(path='/') | safe }}" class="text-lg font-medium tracking-tight">
-          {{ config.title }}
-        </a>
+        <a href="{{ get_url(path='/') | safe }}"
+           class="text-lg font-medium tracking-tight">{{ config.title }}</a>
         <nav class="flex gap-6 text-sm text-muted">
-          <a href="{{ get_url(path='/projects') | safe }}" class="hover:text-fg transition-colors">Projects</a>
+          <a href="{{ get_url(path='/projects') | safe }}"
+             class="hover:text-fg transition-colors">Projects</a>
           <a href="{{ config.extra.blog | safe }}"
              target="_blank"
              rel="noopener noreferrer"
@@ -23,7 +25,6 @@
           </a>
         </nav>
       </header>
-
       <main>
         {% block content %}{% endblock %}
       </main>

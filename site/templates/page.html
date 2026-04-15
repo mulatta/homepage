@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }} — {{ config.title }}{% endblock %}
 {% block content %}
-<article class="prose-custom space-y-4">
-  <h1 class="text-2xl font-medium tracking-tight">{{ page.title }}</h1>
-  <div>{{ page.content | safe }}</div>
-</article>
+  <article class="prose-custom space-y-4">
+    <h1 class="text-2xl font-medium tracking-tight">{{ page.title }}</h1>
+    <div>{{ page.content | safe }}</div>
+  </article>
 {% endblock %}
