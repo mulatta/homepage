@@ -2,7 +2,6 @@
   perSystem =
     {
       pkgs,
-      inputs',
       ...
     }:
     {
@@ -33,7 +32,6 @@
           for f in Geist-Regular Geist-Medium Geist-SemiBold GeistMono-Regular; do
             cp -f ${pkgs.geist-font}/share/fonts/opentype/$f.otf static/fonts/$f.otf
           done
-          cp -f ${inputs'.cv.packages.cv}/cv.pdf static/cv.pdf
           runHook postConfigure
         '';
 
