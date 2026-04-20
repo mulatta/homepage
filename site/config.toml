@@ -11,3 +11,7 @@ taxonomies = []
 [extra]
 github = "https://github.com/mulatta"
 blog = "https://blog.mulatta.io"
+# Replaced at nix build time with inputs.self.lastModifiedDate; in dev
+# (just serve) it stays as "dev" since the placeholder only changes
+# during a full flake build.
+last_updated = "dev"

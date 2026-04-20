@@ -28,6 +28,10 @@
       <main>
         {% block content %}{% endblock %}
       </main>
+      <hr class="border-border mt-64 mb-12">
+      <footer class="text-xs font-mono text-muted pb-4">
+        Last updated {{ config.extra.last_updated }}
+      </footer>
     </div>
   </body>
 </html>
