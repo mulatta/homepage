@@ -55,6 +55,24 @@
           cp -r public/. $out/
           runHook postInstall
         '';
+
+        postInstall = ''
+          # robots.txt: emit Content Signals Policy ourselves (Cloudflare's
+          # managed robots.txt only triggers on proxied zones; mulatta.io is
+          # DNS-only), then concatenate the upstream AI-crawler blocklist,
+          # then append our sitemap reference.
+          {
+            echo "# Content Signals Policy (served from origin)"
+            echo "User-Agent: *"
+            echo "Content-Signal: search=yes, ai-train=no"
+            echo "Allow: /"
+            echo ""
+            echo "# AI crawlers — sourced from ai-robots-txt/ai.robots.txt upstream"
+            cat ${inputs.ai-robots-txt}/robots.txt
+            echo ""
+            echo "Sitemap: https://mulatta.io/sitemap.xml"
+          } > $out/robots.txt
+        '';
       };
 
     };
