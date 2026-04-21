@@ -1,10 +1,13 @@
-{% import "macros/icon.html" as icons %}<!DOCTYPE html>
+{% import "macros/icon.html" as icons %}
+<!DOCTYPE html>
 <html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-      {% block title %}{{ config.title }}{% endblock %}
+      {% block title %}
+        {{ config.title }}
+      {% endblock title %}
     </title>
     <meta name="description" content="{{ config.description }}" />
     <link rel="stylesheet" href="{{ get_url(path='css/main.css') | safe }}" />
@@ -26,9 +29,10 @@
         </nav>
       </header>
       <main>
-        {% block content %}{% endblock %}
+        {% block content %}
+        {% endblock content %}
       </main>
-      <hr class="border-border mt-64 mb-12">
+      <hr class="border-border mt-32 mb-12">
       <footer class="text-xs font-mono text-muted pb-4">
         Last updated {{ config.extra.last_updated }}
       </footer>

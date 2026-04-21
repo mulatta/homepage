@@ -46,6 +46,12 @@
       djlint = {
         enable = true;
         indent = 2;
+        # H031: meta keywords are deprecated for modern SEO.
+        # J018: Jinja convention (url_for) doesn't apply — Tera uses get_url().
+        ignoreRules = [
+          "H031"
+          "J018"
+        ];
       };
     };
   };
