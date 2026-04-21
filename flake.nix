@@ -3,6 +3,8 @@
 
   inputs = {
     # keep-sorted start
+    ai-robots-txt.flake = false;
+    ai-robots-txt.url = "github:ai-robots-txt/ai.robots.txt";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
